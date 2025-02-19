@@ -1,0 +1,19 @@
+
+.tituloPrincipal{
+    text-align: center;
+    color: #5271ff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.principalContainer {
+    position: fixed;  
+    background-color: white; 
+    width: 90%;       
+    height: 85%;    
+    text-align: left;
+    border-radius: 40px;
+
+    display: flex;                
+    justify-content: space-between;
+}
+
