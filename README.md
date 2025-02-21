@@ -45,8 +45,8 @@ Este projeto é uma API RESTful desenvolvida com Java, utilizando Spring Boot, L
     ```
 
 
-3. **Inciando o projeto**
-    Com o MySQL rodando e o banco de dados configurado, basta rodar os seguintes comandos:
+3. **Inciando o projeto back-end**
+    Com o MySQL rodando e o banco de dados configurado, basta rodar os seguintes comandos dentro da pasta back-end para inciar a api-rest:
     
     ```
         mvnw install
@@ -54,3 +54,14 @@ Este projeto é uma API RESTful desenvolvida com Java, utilizando Spring Boot, L
         mvnw spring-boot:run
     ```
     A API estará disponível em http://localhost:8080.
+
+
+3. **Inciando o projeto front-end**
+    Com o back-end rodando e, basta rodar os seguintes comandos via console dentro da pasta front-end para a  aplicação web:
+    
+    ```
+        npm install
+
+        npm start
+    ```
+    A API estará disponível em http://localhost:3000.
