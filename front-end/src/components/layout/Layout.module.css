@@ -1,19 +1,18 @@
 
-.tituloPrincipal{
+.layoutPrincipal{
     text-align: center;
-    color: #5271ff;
     font-family: 'Open Sans', sans-serif;
-}
+    color: red;
 
-.principalContainer {
+}
+.layoutContainer {
     position: fixed;  
     background-color: white; 
     width: 90%;       
     height: 85%;    
-    text-align: left;
     border-radius: 40px;
-
     display: flex;                
     justify-content: space-between;
+    overflow-y: auto;
 }
 

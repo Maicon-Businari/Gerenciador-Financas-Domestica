@@ -1,0 +1,47 @@
+.containerListaPessoas {
+    padding: 3%;
+    width: 100%;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;  
+}
+.linhaListaTitulo {
+    height: 40px;
+    width: 100%;
+    list-style-type: none;
+    justify-content: center;
+    display: table-row
+}
+
+.linhaListaItem {
+    height: 30px;
+    width: 100%;
+    list-style-type: none;
+    display: table-row;
+}
+
+.itemLista {
+    border: 2px solid;
+    border-color: #7ed957;
+    color: black;
+    font-weight: bolder;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.nenhumItem {
+    width: 100%;
+    text-align: center;
+}
+
+
+.titulo{
+    color: #7ed957;
+}
+
+

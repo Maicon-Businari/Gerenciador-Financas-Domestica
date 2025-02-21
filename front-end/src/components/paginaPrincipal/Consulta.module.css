@@ -1,0 +1,11 @@
+.linkButton {
+    margin-top: 34%;
+    background-color: #7ed957;
+}
+
+.linkButton:hover {
+    background-color: #42a318; 
+}
+.hr{
+    color: #7ed957;
+}
