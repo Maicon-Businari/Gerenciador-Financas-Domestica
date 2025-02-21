@@ -38,6 +38,7 @@ public class ServicosConsultas {
 
         BigDecimal receitasTotais = BigDecimal.ZERO;
         BigDecimal despesasTotais = BigDecimal.ZERO;
+        int id =0;
 
         for (Pessoa pessoa : listaPessoas) {
 
@@ -54,11 +55,13 @@ public class ServicosConsultas {
                     despesasTotais = despesasTotais.add(transacao.getValor());
                 }
             }
+            id= id+1;
             saldoIndiviual = receitasIndividuais.subtract(despesasIndividuais);
-            listaFinancas.add(new AprensentacaoFinancas(pessoa.getNome(), receitasIndividuais, despesasIndividuais,
+            listaFinancas.add(new AprensentacaoFinancas(id, pessoa.getNome(), receitasIndividuais, despesasIndividuais,
                     saldoIndiviual));
         }
-        listaFinancas.add(new AprensentacaoFinancas("Total", receitasTotais, despesasTotais,
+        id = id+1;
+        listaFinancas.add(new AprensentacaoFinancas(id,"Total", receitasTotais, despesasTotais,
                 receitasTotais.subtract(despesasTotais)));
         return listaFinancas;
     }

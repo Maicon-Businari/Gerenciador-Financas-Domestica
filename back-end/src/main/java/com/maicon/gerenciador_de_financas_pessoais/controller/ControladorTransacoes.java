@@ -28,13 +28,13 @@ public class ControladorTransacoes {
 
     //Rota para cadastrar transações.
     @PostMapping("cadastrar")
-    public Transacao cadastrarPessoa(@RequestBody Transacao transacao) {
+    public String cadastrarTransacao(@RequestBody Transacao transacao) {
         return servicosTransacoes.cadastrarTransacao(transacao);
     }
 
     //Rota para listar transações.
     @GetMapping("listar")
-    public List<Transacao> listarPessoa() {
+    public List<Transacao> listarTransacao() {
         return servicosTransacoes.listarTransacoes();
     }
 }

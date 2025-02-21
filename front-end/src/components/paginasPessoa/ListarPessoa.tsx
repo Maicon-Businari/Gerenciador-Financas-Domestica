@@ -11,7 +11,7 @@ function ListarPessoa() {
     async function listarPessoas() {
         axios.get(url)
             .then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     setPessoas(res.data)
                 }
             })

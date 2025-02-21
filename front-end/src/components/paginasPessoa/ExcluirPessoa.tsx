@@ -15,14 +15,14 @@ function ExcluirPessoa() {
 
     async function excluir(e: React.FormEvent) {
         e.preventDefault();
-        if (typeof nome === 'undefined' ) {
+        if (typeof nome === 'undefined'|| nome === "" ) {
             setMensagem("Favor informar um nome.");
             return;
         }
 
         axios.delete(`${url}/${nome}`)
             .then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     setMensagem(res.data);
                 }
             })

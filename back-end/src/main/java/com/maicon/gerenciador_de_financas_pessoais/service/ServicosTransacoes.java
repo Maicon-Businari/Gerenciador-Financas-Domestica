@@ -27,25 +27,30 @@ public class ServicosTransacoes {
     RepositorioTransacao repositorioTransacao;
 
     // Responsavel por receber uma trasação do controler e cadastar no repositório
-    public Transacao cadastrarTransacao(Transacao transacao) {
+    public String cadastrarTransacao(Transacao transacao) {
 
         Pessoa pessoaEncontrada = servicosPessoa.buscarPessoa(transacao.getPessoa().getNome());
 
-        /*---------------- IMPORTANTE FUNCIONALIDADE SOLICIDATA ----------------
-        * Solicitação: "Caso o usuário informe um menor de idade (menor de 18), apenas despesas deverão ser aceitas."
-        * 
-        * if() -> Fica responsavel por autorizar uma transação da pessoa com base nos critérios acima
-        * 
-        */
-        if (pessoaEncontrada.getIdade() >= 18 || pessoaEncontrada.getIdade() < 18 && !transacao.isReceita()) {
-            transacao.setPessoa(pessoaEncontrada);
-            return repositorioTransacao.save(transacao);
+        if (pessoaEncontrada != null) {
+            /*---------------- IMPORTANTE FUNCIONALIDADE SOLICIDATA ----------------
+            * Solicitação: "Caso o usuário informe um menor de idade (menor de 18), apenas despesas deverão ser aceitas."
+            * 
+            * if() -> Fica responsavel por autorizar uma transação da pessoa com base nos critérios acima
+            * 
+            */
+            if (pessoaEncontrada.getIdade() >= 18 || pessoaEncontrada.getIdade() < 18 && !transacao.isReceita()) {
+                transacao.setPessoa(pessoaEncontrada);
+                repositorioTransacao.save(transacao);
+                return "cadastrado";
 
+            }
+            return "menor";
         }
-        return null;
+
+        return "desconhecido";
     }
 
-    //Solicita ao repositório a lista de transações e encaminha para o controlador
+    // Solicita ao repositório a lista de transações e encaminha para o controlador
     public List<Transacao> listarTransacoes() {
         return repositorioTransacao.findAll();
     }

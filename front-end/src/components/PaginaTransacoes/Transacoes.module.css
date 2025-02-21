@@ -1,4 +1,4 @@
-.containerListaPessoas {
+.containerListaTransacao {
     padding: 3%;
     width: 100%;
 }
@@ -29,7 +29,7 @@
     font-weight: bolder;
     flex: 1;
     text-align: center;
-    white-space: nowrap; /* Impede a quebra de linha */
+    white-space: nowrap;
     overflow: hidden;
 }
 
@@ -42,17 +42,18 @@
    color: #ffde59;
 }
 
-.cadastroPessoas {
+.cadastroTransacao {
     width: 100%;
 }
 
 
-.inputCadastroPessoas{
+.inputCadastroTransacao{
     padding-top: 10%;
     display: flex;
     flex-direction: column;
     width: 30%;
     margin: 0 auto;
+    color: #ffde59;
 }
 
 .input {
@@ -87,7 +88,7 @@
 
 label {
     height: 15px;
-    display: inline-flex; /* Para exibir os labels lado a lado */
-    align-items: center;  /* Alinha os inputs e o texto no centro */
+    display: inline-flex; 
+    align-items: center; 
     margin-right: 15px; 
 }

@@ -13,19 +13,17 @@ function BuscarPessoa() {
         e.preventDefault();
 
         setPessoa(null);
-        if (typeof nome === 'undefined' || nome == "") {
+        if (typeof nome === 'undefined' || nome === "") {
             setMensagem("Favor digitar um nome")
             return
         }
 
         axios.get(`${url}/${nome}`)
             .then(res => {
-                if (res.data == '') {
-                    console.log(nome)
+                if (res.data === '') {
                     setMensagem("Pessoa não encontrada")
                     return
                 }
-                console.log(res.data)
                 setMensagem("")
                 setPessoa(res.data);
 

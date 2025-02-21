@@ -17,8 +17,8 @@ function CadastrarTransacoes() {
 
     async function cadastrar(e: React.FormEvent) {
         e.preventDefault();
-        if (typeof descricao === 'undefined' || typeof valor === 'undefined' ||  receita == null || typeof nome === 'undefined'
-            || descricao == "" || valor == "" || nome == ""
+        if (typeof descricao === 'undefined' || typeof valor === 'undefined' ||  receita === null || typeof nome === 'undefined'
+            || descricao === "" || valor === "" || nome === ""
         ) {
             setMensagem("Favor preencha todas as indormações");
             return;
@@ -42,12 +42,18 @@ function CadastrarTransacoes() {
 
         })
             .then(res => {
-                if (res.status == 200) {
-                    setMensagem("transação cadastrada com sucesso!");
+                if (res.data === "menor") {
+                    setMensagem("Pessoa menor de idade, não pode realizar receita");
                 }
+                else if(res.data === "desconhecido"){ 
+                    setMensagem("Pessoa não encontrada");
+                }
+                else {
+                    setMensagem("Transação cadastrada");
+                }
+
             })
             .catch(e => {
-                setMensagem("Pessoa não encontrada");
                 console.log("Erro ao cadastrar", e);
             });
 
@@ -69,9 +75,9 @@ function CadastrarTransacoes() {
 
 
     return (
-        <div className={style.cadastroPessoas}>
+        <div className={style.cadastroTransacao}>
             <h1 className={style.titulo}> Cadastro de Pessoa</h1>
-            <form className={style.inputCadastroPessoas} onSubmit={cadastrar}>
+            <form className={style.inputCadastroTransacao} onSubmit={cadastrar}>
                 <input className={style.input} type="text" id="nome" placeholder="Nome responsavel pela transação" onChange={(e) => setNome(e.target.value)} />
                 <input className={style.input} type="text" id="valor" placeholder="Valor" onChange={(e) => setValor(e.target.value)} />
                 <input className={style.input} type="text" id="descricao" placeholder="Descrição" onChange={(e) => setDescricao(e.target.value)} />

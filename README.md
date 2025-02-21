@@ -1,15 +1,22 @@
 # Gerenciador de Finanças Domésticas
 
-Este projeto é uma API RESTful desenvolvida com Java, utilizando Spring Boot, Lombok e MySQL. A API permite o gerenciamento de finanças pessoais, proporcionando operações para criar, ler, atualizar e excluir transações financeiras, bem como gerar relatórios de despesas e receitas.
+Este projeto é uma aplicação completa de gerenciamento de finanças pessoais, composta por uma API RESTful desenvolvida com Java, utilizando Spring Boot, Lombok e MySQL no back-end, e uma interface de usuário construída com React no front-end. A API permite operações para criar, ler, atualizar e excluir transações financeiras, além de gerar relatórios de despesas e receitas. No front-end, a aplicação utiliza React Router para navegação, Axios para realizar requisições à API e TypeScript para uma melhor tipagem de dados. Além disso, a aplicação inclui testes com Jest e React Testing Library para garantir a qualidade do código.
 
 ## Tecnologias Utilizadas
 
+### Back-end
 - **Java 23**
 - **Spring Boot** (para construir a API RESTful)
 - **Lombok** (para reduzir a verbosidade do código)
 - **MySQL** (para gerenciamento de banco de dados relacional)
 - **Spring Data JPA** (para facilitar a interação com o banco de dados)
 - **Spring Web** (para a construção da API)
+
+### Front-end
+- **React (para construção da interface de usuário)**
+- **React Router DOM (para navegação entre páginas)**
+- **TypeScript (para tipagem estática e maior segurança no desenvolvimento)**
+- **Axios (para fazer requisições HTTP para a API)**
 
 ## Funcionalidades
 

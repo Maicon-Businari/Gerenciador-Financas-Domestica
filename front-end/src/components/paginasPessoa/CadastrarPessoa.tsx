@@ -16,7 +16,7 @@ function CadastrarPessoa() {
 
     async function cadastrar(e: React.FormEvent) {
         e.preventDefault();
-        if (typeof nome === 'undefined' || typeof idade === 'undefined' || nome == "" || idade == "") {
+        if (typeof nome === 'undefined' || typeof idade === 'undefined' || nome === "" || idade === "") {
             setMensagem("Favor preencha todos os campos");
             return;
         }
@@ -34,7 +34,7 @@ function CadastrarPessoa() {
             idade: idadeNum
         })
             .then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     console.log("cadastrado", res.data)
                     setMensagem("Pessoa cadastrada com sucesso!");
                 }

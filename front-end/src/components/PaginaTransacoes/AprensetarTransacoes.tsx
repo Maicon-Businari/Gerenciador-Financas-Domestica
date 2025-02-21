@@ -11,7 +11,7 @@ function AprensetarTransacoes() {
     async function listarPessoas() {
         axios.get(url)
             .then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     setTransacoes(res.data)
                 }
             })
@@ -25,7 +25,7 @@ function AprensetarTransacoes() {
     const [transacoes, setTransacoes] = useState<Transacao[]>([]);
 
     return (
-        <div className={style.containerListaPessoas}>
+        <div className={style.containerListaTransacao}>
             <h1 className={style.titulo}> Lista de Transações </h1>
 
 

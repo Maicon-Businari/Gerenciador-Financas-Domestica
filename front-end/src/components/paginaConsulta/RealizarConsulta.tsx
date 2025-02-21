@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Pessoa from "../../models/Pessoa";
 
 import style from "./RealizarConsulta.module.css";
 import Gastos from "../../models/Gastos";
@@ -10,10 +9,10 @@ function RealizarConsulta() {
 
     const url = "http://localhost:8080/consulta/calculargastos";
 
-    async function listarPessoas() {
+    async function listarConsulta() {
         axios.get(url)
             .then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     setGastos(res.data)
                 }
             })
@@ -21,13 +20,13 @@ function RealizarConsulta() {
     }
 
     useEffect(() => {
-        listarPessoas();
+        listarConsulta();
     }, []);
 
     const [gastos, setGastos] = useState<Gastos[]>([]);
 
     return (
-        <div className={style.containerListaPessoas}>
+        <div className={style.containerListaConsulta}>
             <h1 className={style.titulo}> Consulta de finanças </h1>
 
             {gastos.length > 0 ? (
@@ -43,7 +42,7 @@ function RealizarConsulta() {
                     <tbody>
                         {gastos.map((gasto) => (
 
-                            <tr className={style.linhaListaItem}>
+                            <tr key={gasto.id} className={style.linhaListaItem}>
                                 <td className={style.itemLista}>{gasto.nome}</td>
                                 <td className={`${style.itemLista} ${style.itemListaMeio}`}>R${gasto.receita}</td>
                                 <td className={`${style.itemLista} ${style.itemListaMeio}`}>R${gasto.despesa}</td>
